@@ -13,15 +13,22 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Container(  
         margin: EdgeInsets.only(top: 8),
+        
         child: ListView(  
           physics:  ClampingScrollPhysics(),
           children: <Widget>[
+            //Custom CustomAppBar
             Container(  
               margin: EdgeInsets.only(left: 16, right: 16, top: 16),
               child: Row(  
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  SvgPicture.asset('assets/svg/drawer_icon.svg'),
+                  GestureDetector(
+                    onTap: (){
+                      print("object");
+                    },
+                    child: SvgPicture.asset('assets/svg/drawer_icon.svg')
+                  ),
                   Container(  
                     height: 59,
                     width: 59,
@@ -32,7 +39,8 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-            )
+            ),
+
           ],
         )
       )
