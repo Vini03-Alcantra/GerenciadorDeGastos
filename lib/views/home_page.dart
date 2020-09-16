@@ -74,6 +74,7 @@ class _HomePageState extends State<HomePage> {
             ),
             //Termina aqui
 
+            //Cartão aqui
             Container(
               height: 199,
               child: ListView.builder(
@@ -89,11 +90,89 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(  
                       borderRadius: BorderRadius.circular(28),
                       color: Color(cards[index].cardBackground)
+                    ),
+                    child: Stack(  
+                      children: <Widget>[
+                        Positioned(  
+                          bottom: 0,
+                          right: 0,
+                          child: SvgPicture.asset(cards[index].cardElementBottom)
+                        ),
+                        Positioned(
+                          left: 29,
+                          top: 48,
+                          child: Text(
+                            "CARD NUMBER", style: GoogleFonts.inter(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400, 
+                              color: kWhiteColor
+                            )
+                          )
+                        ),
+                        Positioned(
+                          left: 29,
+                          top: 65,
+                          child: Text(
+                            "${cards[index].cardNumber}", style: GoogleFonts.inter(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700, 
+                              color: kWhiteColor
+                            )
+                          )
+                        ),
+                        Positioned(
+                          right: 21,
+                          top: 35,
+                          child: Image.asset(
+                            cards[index].cardType,
+                            width: 27,
+                            height: 27
+                          )
+                        ),
+                        Positioned(
+                          left: 29,
+                          bottom: 45,
+                          child: Text("CARD HOLDERNAME", style: GoogleFonts.inter(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: kWhiteColor
+                          ))
+                        ),
+                        Positioned(
+                          left: 29,
+                          bottom: 23,
+                          child: Text(cards[index].user, style: GoogleFonts.inter(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: kWhiteColor
+                          ))
+                        ),
+                        Positioned(
+                          left: 202,
+                          bottom: 45,
+                          child: Text("EMPIRY DATE", style: GoogleFonts.inter(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: kWhiteColor
+                          ))
+                        ),
+                        Positioned(
+                          left: 202,
+                          bottom: 23,
+                          child: Text(cards[index].cardExpired, style: GoogleFonts.inter(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: kWhiteColor
+                          )
+                          )
+                        ),
+                      ],
                     )
                   );
                 }
               )
-            )
+            ),
+            //Cartão termina aqui
           ],
         )
       )
