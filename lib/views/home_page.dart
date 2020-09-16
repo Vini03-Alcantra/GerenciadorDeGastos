@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moneymanagementcomplex/constants/color_constants.dart';
 import 'package:moneymanagementcomplex/model/card_model.dart';
+import 'package:moneymanagementcomplex/model/operation_model.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -13,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // Current selected
   int current = 0;
-  
+
   //Handle Indicator 
   List<T> map<T>(List list, Function handler){
     List<T> result = [];
@@ -185,6 +186,38 @@ class _HomePageState extends State<HomePage> {
               )
             ),
             //Cartão termina aqui
+
+            Padding(
+              padding: EdgeInsets.only(left: 16, bottom: 13, top: 29, right: 26),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text("Operations", style: GoogleFonts.inter(  
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: kBlackColor
+                  ),),
+                  Row(  
+                    children: map<Widget>(  
+                      datas, 
+                      (index, selected){
+                        return Container(
+                          alignment: Alignment.centerLeft,
+                          height: 9,
+                          width: 9,
+                          decoration: BoxDecoration(  
+                            shape: BoxShape.circle,
+                            color: current == index 
+                              ?  kBlueColor
+                              :  kTwentyBlueColor 
+                          )
+                        );
+                      }
+                    ),
+                  )
+                ],
+              )
+            )
           ],
         )
       )
