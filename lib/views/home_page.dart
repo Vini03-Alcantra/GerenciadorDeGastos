@@ -11,7 +11,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
+  // Current selected
+  int current = 0;
+  
   //Handle Indicator 
   List<T> map<T>(List list, Function handler){
     List<T> result = [];
@@ -20,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     }
     return result;
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
