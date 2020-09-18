@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:moneymanagementcomplex/constants/color_constants.dart';
 import 'package:moneymanagementcomplex/model/card_model.dart';
 import 'package:moneymanagementcomplex/model/operation_model.dart';
+import 'package:moneymanagementcomplex/model/transaction_model.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -222,6 +223,7 @@ class _HomePageState extends State<HomePage> {
             ),
             //Final Operations
 
+            //Cards operations
             Container(  
               height: 123,
               child: ListView.builder(
@@ -245,6 +247,44 @@ class _HomePageState extends State<HomePage> {
                   );
                 }
               )
+            ),
+            //Final Card operations
+
+            //Transactio Section
+            Padding(
+              padding: EdgeInsets.only(left: 16, bottom: 13, top: 29, right:10),
+              child: Text(  
+                "Transaction Histories",
+                style: GoogleFonts.inter(  
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                  color: kBlackColor
+                )
+              )
+            ),
+            ListView.builder(
+              itemCount: transactions.length,
+              padding: EdgeInsets.only(left: 16, right: 16),
+              shrinkWrap: true,
+              itemBuilder: (context, index){
+                return Container(  
+                  height: 57,
+                  margin: EdgeInsets.only(bottom: 13),
+                  padding: EdgeInsets.only(left: 24, top: 12, bottom: 22, right: 22),
+                  decoration: BoxDecoration(
+                    color: kWhiteColor,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(  
+                        color: kTenBlackColor,
+                        blurRadius: 10,
+                        spreadRadius: 5,
+                        offset: Offset(8, 8)
+                      )
+                    ]
+                  ),
+                );
+              }
             )
           ],
         )
