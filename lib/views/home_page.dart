@@ -272,8 +272,8 @@ class _HomePageState extends State<HomePage> {
                   return Container(  
                     height: 57,
                     margin: EdgeInsets.only(bottom: 13),
-                    padding: EdgeInsets.only(left: 12, top: 12, bottom: 6, right: 12),
-                    decoration: BoxDecoration(
+                    padding: EdgeInsets.only(left: 12, top: 6, bottom: 6, right: 12),
+                    decoration: BoxDecoration(                      
                       color: kWhiteColor,
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
@@ -285,60 +285,59 @@ class _HomePageState extends State<HomePage> {
                         )
                       ]
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Row(  
-                          children: <Widget>[
-                            Container(  
-                              height: 57,
-                              width: 57,
-                              decoration: BoxDecoration(                                  
-                                shape: BoxShape.circle,
-                                image: DecorationImage(  
-                                  image: AssetImage(transactions[index].photo)
-                                )
-                                )
-                              ),
-                              SizedBox(width: 13),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Text(
-                                    transactions[index].name,
-                                    style: GoogleFonts.inter(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w700,
-                                      color: kBlackColor
-                                    ),
-                                  ),
-                                  Text(
-                                    transactions[index].date,
-                                    style: GoogleFonts.inter(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: kGreyColor
-                                    ),
-                                  )
-                                ],
-                              )
-                            ]
-                          ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
                           Row(  
                             children: <Widget>[
-                              Text(
-                                transactions[index].amount,
-                                style: GoogleFonts.inter(  
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w700,
-                                  color: kBlueColor
+                              Container(  
+                                height: 57,
+                                width: 57,
+                                decoration: BoxDecoration(                                  
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(  
+                                    image: AssetImage(transactions[index].photo)
+                                  )
+                                  )
+                                ),
+                                SizedBox(width: 13),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      transactions[index].name,
+                                      style: GoogleFonts.inter(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700,
+                                        color: kBlackColor
+                                      ),
+                                    ),
+                                    Text(
+                                      transactions[index].date,
+                                      style: GoogleFonts.inter(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w500,
+                                        color: kBlackColor
+                                      ),
+                                    )
+                                  ],
                                 )
+                              ]
+                            ),
+                            Text(
+                              transactions[index].amount,
+                              style: GoogleFonts.inter(  
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                                color: kBlueColor
                               )
-                            ],
-                          )
-                        ],
-                      )
+                            )
+                          ],
+                        ),
+                    )
                     );
                   }
                 )
