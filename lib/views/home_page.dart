@@ -227,10 +227,10 @@ class _HomePageState extends State<HomePage> {
 
               //Cards operations
               Container(  
-                height: 123,
+                height: altura / 6.5,
                 child: ListView.builder(
                   itemCount: datas.length,
-                  padding: EdgeInsets.only(left: 16),
+                  padding: EdgeInsets.only(left: largura / 24),
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index){
                     return GestureDetector(
@@ -366,10 +366,12 @@ class OperationCard extends StatefulWidget {
 class _OperationCardState extends State<OperationCard> {
   @override
   Widget build(BuildContext context) {
+    var altura = MediaQuery.of(context).size.height;
+    var largura = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.only(right: 16),
-      width: 123,
-      height: 123,
+      margin: EdgeInsets.only(right: largura / 28),
+      width: largura / 3.3,
+      height: altura / 6.5,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(  
@@ -389,7 +391,7 @@ class _OperationCardState extends State<OperationCard> {
           SvgPicture.asset(
             widget.isSelected ? widget.selectedIcon : widget.unselectedIcon
           ),
-          SizedBox(height: 9),
+          SizedBox(height: altura / 82),
           Text(
             widget.operation, textAlign: TextAlign.center,
             style: GoogleFonts.inter(
