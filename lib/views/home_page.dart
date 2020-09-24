@@ -266,7 +266,7 @@ class _HomePageState extends State<HomePage> {
               ),
               ListView.builder(
                 itemCount: transactions.length,
-                padding: EdgeInsets.only(left: 16, right: 16),
+                padding: EdgeInsets.only(left: largura / 24, right: largura / 24),
                 shrinkWrap: true,
                 itemBuilder: (context, index){
                   return Container(  
@@ -274,7 +274,8 @@ class _HomePageState extends State<HomePage> {
                     margin: EdgeInsets.only(bottom: 13),
                     padding: EdgeInsets.only(left: 12, top: 6, bottom: 6, right: 12),
                     decoration: BoxDecoration(                      
-                      color: kWhiteColor,
+                      color: Colors.red,
+                      //color: kWhiteColor,
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(  
