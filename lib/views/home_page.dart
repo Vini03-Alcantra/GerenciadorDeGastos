@@ -29,6 +29,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var altura = MediaQuery.of(context).size.height;
     var largura = MediaQuery.of(context).size.width;
+
+    var nowDate = DateTime.now();    
     return Scaffold(
       body: SafeArea(
         child: Container(                      
@@ -45,8 +47,9 @@ class _HomePageState extends State<HomePage> {
                     GestureDetector(
                       onTap: (){
                         print("object");
+                        print(nowDate.toLocal());
                       },
-                      child: SvgPicture.asset('assets/svg/drawer_icon.svg', color: Colors.deepPurple[700])
+                      child: SvgPicture.asset('assets/svg/drawer_icon.svg', color: kBlueColor)
                     ),                    
                     CircleAvatar(                        
                       backgroundImage: AssetImage("assets/images/user_image.png"),                      
@@ -67,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Bom dia",
+                      "Bom dia,",
                       style: GoogleFonts.inter(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -269,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                   return Container(  
                     height: 57,
                     margin: EdgeInsets.only(bottom: 13),
-                    padding: EdgeInsets.only(left: 24, top: 12, bottom: 22, right: 22),
+                    padding: EdgeInsets.only(left: 12, top: 12, bottom: 6, right: 12),
                     decoration: BoxDecoration(
                       color: kWhiteColor,
                       borderRadius: BorderRadius.circular(15),
@@ -290,7 +293,7 @@ class _HomePageState extends State<HomePage> {
                             Container(  
                               height: 57,
                               width: 57,
-                              decoration: BoxDecoration(  
+                              decoration: BoxDecoration(                                  
                                 shape: BoxShape.circle,
                                 image: DecorationImage(  
                                   image: AssetImage(transactions[index].photo)
@@ -313,7 +316,7 @@ class _HomePageState extends State<HomePage> {
                                   Text(
                                     transactions[index].date,
                                     style: GoogleFonts.inter(
-                                      fontSize: 15,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.w400,
                                       color: kGreyColor
                                     ),
