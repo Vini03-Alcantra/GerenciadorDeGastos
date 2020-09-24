@@ -92,17 +92,17 @@ class _HomePageState extends State<HomePage> {
 
               //Cartão aqui
               Container(
-                height: 199,
+                height: altura / 4,
                 child: ListView.builder(
                   physics: ClampingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.only(left: 16, right: 6),
+                  padding: EdgeInsets.only(left: largura / 24, right: largura / 40),
                   itemCount: cards.length,
                   itemBuilder: (context, index){
                     return Container(
-                      margin: EdgeInsets.only(right: 10),
-                      height: 199,
-                      width: 344,
+                      margin: EdgeInsets.only(right: largura / 60),
+                      height: altura / 4,
+                      width: largura / 1.2,
                       decoration: BoxDecoration(  
                         borderRadius: BorderRadius.circular(28),
                         color: Color(cards[index].cardBackground)
@@ -115,19 +115,19 @@ class _HomePageState extends State<HomePage> {
                             child: SvgPicture.asset(cards[index].cardElementBottom)
                           ),
                           Positioned(
-                            left: 29,
-                            top: 48,
+                            left: largura / 15,
+                            top: altura / 22,
                             child: Text(
                               "CARD NUMBER", style: GoogleFonts.inter(
-                                fontSize: 14,
+                                fontSize: 16,
                                 fontWeight: FontWeight.w400, 
                                 color: kWhiteColor
                               )
                             )
                           ),
                           Positioned(
-                            left: 29,
-                            top: 65,
+                            left: largura / 15,
+                            top: altura / 12,
                             child: Text(
                               "${cards[index].cardNumber}", style: GoogleFonts.inter(
                                 fontSize: 20,
@@ -137,17 +137,17 @@ class _HomePageState extends State<HomePage> {
                             )
                           ),
                           Positioned(
-                            right: 21,
-                            top: 35,
+                            right: largura / 24,
+                            top: altura / 60,
                             child: Image.asset(
                               cards[index].cardType,
-                              width: 27,
-                              height: 27
+                              width: largura / 10,
+                              height: altura / 15
                             )
                           ),
                           Positioned(
-                            left: 29,
-                            bottom: 45,
+                            left: largura / 15,
+                            bottom: altura / 17,
                             child: Text("CARD HOLDERNAME", style: GoogleFonts.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
@@ -155,8 +155,8 @@ class _HomePageState extends State<HomePage> {
                             ))
                           ),
                           Positioned(
-                            left: 29,
-                            bottom: 23,
+                            left: largura / 15,
+                            bottom: altura / 37,
                             child: Text(cards[index].user, style: GoogleFonts.inter(
                               fontSize: 20,
                               fontWeight: FontWeight.w700,
@@ -164,8 +164,8 @@ class _HomePageState extends State<HomePage> {
                             ))
                           ),
                           Positioned(
-                            left: 202,
-                            bottom: 45,
+                            left: largura / 2.15,
+                            bottom: altura / 17,
                             child: Text("EMPIRY DATE", style: GoogleFonts.inter(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
@@ -173,8 +173,8 @@ class _HomePageState extends State<HomePage> {
                             ))
                           ),
                           Positioned(
-                            left: 202,
-                            bottom: 23,
+                            left: largura / 2.15,
+                            bottom: altura / 37,
                             child: Text(cards[index].cardExpired, style: GoogleFonts.inter(
                               fontSize: 20,
                               fontWeight: FontWeight.w700,
