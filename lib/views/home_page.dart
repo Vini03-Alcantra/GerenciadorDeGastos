@@ -254,7 +254,7 @@ class _HomePageState extends State<HomePage> {
 
               //Transactio Section
               Padding(
-                padding: EdgeInsets.only(left: 16, bottom: 13, top: 29, right:10),
+                padding: EdgeInsets.only(left: largura / 24, bottom: altura / 48, top: altura / 30, right:largura / 24),
                 child: Text(  
                   "Transaction Histories",
                   style: GoogleFonts.inter(  
@@ -273,9 +273,8 @@ class _HomePageState extends State<HomePage> {
                     height: 57,
                     margin: EdgeInsets.only(bottom: 13),
                     padding: EdgeInsets.only(left: 12, top: 6, bottom: 6, right: 12),
-                    decoration: BoxDecoration(                      
-                      color: Colors.red,
-                      //color: kWhiteColor,
+                    decoration: BoxDecoration(                                                                  
+                      color: kWhiteColor,
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(  
