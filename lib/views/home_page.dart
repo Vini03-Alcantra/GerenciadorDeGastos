@@ -270,11 +270,12 @@ class _HomePageState extends State<HomePage> {
                 shrinkWrap: true,
                 itemBuilder: (context, index){
                   return Container(  
-                    height: 57,
-                    margin: EdgeInsets.only(bottom: 13),
-                    padding: EdgeInsets.only(left: 12, top: 6, bottom: 6, right: 12),
+                    height: altura / 13.5,
+                    margin: EdgeInsets.only(bottom: altura / 80),
+                    padding: EdgeInsets.only(left: largura / 24, top: altura / 130, bottom: altura / 130, right:  largura / 24),
                     decoration: BoxDecoration(                                                                  
-                      color: kWhiteColor,
+                      color: Colors.red,
+                      //color: kWhiteColor,
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(  
@@ -293,8 +294,8 @@ class _HomePageState extends State<HomePage> {
                           Row(  
                             children: <Widget>[
                               Container(  
-                                height: 57,
-                                width: 57,
+                                height: altura / 13.5,
+                                width: largura / 8,
                                 decoration: BoxDecoration(                                  
                                   shape: BoxShape.circle,
                                   image: DecorationImage(  
@@ -302,7 +303,7 @@ class _HomePageState extends State<HomePage> {
                                   )
                                   )
                                 ),
-                                SizedBox(width: 13),
+                                SizedBox(width: largura / 40),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -315,10 +316,11 @@ class _HomePageState extends State<HomePage> {
                                         color: kBlackColor
                                       ),
                                     ),
+                                    SizedBox(height: altura / 220),
                                     Text(
                                       transactions[index].date,
                                       style: GoogleFonts.inter(
-                                        fontSize: 13,
+                                        fontSize: 15,
                                         fontWeight: FontWeight.w500,
                                         color: kBlackColor
                                       ),
@@ -330,7 +332,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               transactions[index].amount,
                               style: GoogleFonts.inter(  
-                                fontSize: 15,
+                                fontSize: 17,
                                 fontWeight: FontWeight.w700,
                                 color: kBlueColor
                               )
