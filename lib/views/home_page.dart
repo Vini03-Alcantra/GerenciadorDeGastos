@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
 
               //Custom CustomAppBar
-              Container(                  
+              Container(                                  
                 margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: largura * 0.035, right: largura * 0.035),
                 child: Row(  
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,23 +46,20 @@ class _HomePageState extends State<HomePage> {
                       onTap: (){
                         print("object");
                       },
-                      child: SvgPicture.asset('assets/svg/drawer_icon.svg')
-                    ),
-                    Container(  
-                      height: 59,
-                      width: 59,
-                      decoration: BoxDecoration(  
-                        borderRadius: BorderRadius.circular(20),
-                        image: DecorationImage(image: AssetImage('assets/images/user_image.png'))
-                      ),
+                      child: SvgPicture.asset('assets/svg/drawer_icon.svg', color: Colors.deepPurple[700])
+                    ),                    
+                    CircleAvatar(                        
+                      backgroundImage: AssetImage("assets/images/user_image.png"),                      
+                      radius: altura / 27,
                     )
                   ],
                 ),
               ),
 
               SizedBox(  
-                height: 25,
+                height: altura / 35 ,
               ),
+              
               //Widget nome e cumprimento
               Padding(
                 padding: EdgeInsets.only(left: 16, bottom: 20),
