@@ -27,17 +27,18 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var altura = MediaQuery.of(context).size.height;
+    var largura = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-        child: Container(  
-          margin: EdgeInsets.only(top: 8),
-          
+        child: Container(                      
           child: ListView(  
             physics:  ClampingScrollPhysics(),
             children: <Widget>[
+
               //Custom CustomAppBar
-              Container(  
-                margin: EdgeInsets.only(left: 16, right: 16, top: 16),
+              Container(                  
+                margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: largura * 0.035, right: largura * 0.035),
                 child: Row(  
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
